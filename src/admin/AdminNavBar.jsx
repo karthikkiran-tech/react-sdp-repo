@@ -3,7 +3,6 @@ import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 import './admin.css';
 import AdminHome from './AdminHome';
 import ViewCustomers from './ViewCustomers';
-import ViewManagers from './ViewManagers';
 import AddManager from './AddManager';
 import AdminLogout from './AdminLogout';
 
