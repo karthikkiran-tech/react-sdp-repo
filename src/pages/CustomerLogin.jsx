@@ -29,6 +29,17 @@ const CustomerLogin = () => {
     if (customer) 
     {
       sessionStorage.setItem('isCustomer', 'true');
+      const customerProfile = {
+        id: customer.id,
+        fullName: customer.fullName,
+        gender: customer.gender,
+        email: customer.email,
+        username: customer.username,
+        contactNo: customer.contactNo,
+        location: customer.location,
+        registeredAt: customer.registeredAt,
+      };
+      sessionStorage.setItem('customerProfile', JSON.stringify(customerProfile));
       alert(`Login successful! Welcome, ${customer.fullName}!`);
       console.log('Login successful:', customer);
       setFormData({
@@ -40,6 +51,7 @@ const CustomerLogin = () => {
     } 
     else 
       {
+      sessionStorage.removeItem('customerProfile');
       alert('Invalid username or password. Please try again.');
       console.log('Login failed: Invalid credentials');
       setFormData({
